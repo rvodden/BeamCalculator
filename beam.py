@@ -37,7 +37,7 @@ class Beam:
 
 class RenderableBeam(Beam, Renderable):
     def render(self, c: cairo.Context):
-        c.rectangle(0, 0, self._length, 1)
+        c.rectangle(-1.0, -0.1, self._length, 0.1)
         for loadposition in self._loads:
             load = loadposition.load
             if issubclass(load.__class__, Renderable):
